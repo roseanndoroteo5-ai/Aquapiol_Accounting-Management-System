@@ -1,0 +1,24 @@
+{{> head}}
+<body class="login-bg min-h-screen">
+  <main class="mx-auto flex min-h-screen max-w-6xl items-center justify-center px-5 py-10">
+    <section class="grid w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl md:grid-cols-2">
+      <div class="login-hero flex flex-col justify-between p-10 text-white md:p-12">
+        <div><div class="mb-10 flex items-center gap-3"><div class="brand-mark">A</div><span class="text-2xl font-bold">AquaPiol</span></div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[.2em] text-cyan-200">Water Refilling Station</p>
+          <h1 class="text-4xl font-bold leading-tight">Accounting made clear. Business made better.</h1>
+          <p class="mt-5 max-w-sm text-sm leading-6 text-slate-200">Manage your income, expenses, transactions, and financial performance in one place.</p>
+        </div><p class="mt-12 text-xs text-slate-300">AquaPiol Management System · Secure staff access</p>
+      </div>
+      <div class="p-8 md:p-12">
+        <div class="mb-8"><p class="text-sm font-semibold text-cyan-700">WELCOME BACK</p><h2 class="mt-2 text-3xl font-bold text-slate-900">Sign in to your account</h2><p class="mt-2 text-sm text-slate-500">Use your assigned administrator or staff credentials.</p></div>
+        {{> flash}}
+        <form action="/login" method="POST" class="space-y-5">
+          <div><label class="form-label" for="email">Email address</label><input class="form-input" id="email" name="email" type="email" placeholder="name@aquapiol.com" required autocomplete="username"></div>
+          <div><label class="form-label" for="password">Password</label><input class="form-input" id="password" name="password" type="password" placeholder="Enter your password" required autocomplete="current-password"></div>
+          <button class="primary-btn w-full" type="submit">Sign In <span>→</span></button>
+        </form>
+        <p class="mt-8 text-center text-xs text-slate-400">Authorized personnel only. Your access is based on your assigned role.</p>
+      </div>
+    </section>
+  </main>
+{{> footer}}

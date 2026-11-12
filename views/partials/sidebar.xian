@@ -1,0 +1,23 @@
+<aside class="sidebar fixed inset-y-0 left-0 z-30 flex w-64 flex-col text-white">
+  <div class="border-b border-white/10 px-6 py-6">
+    <div class="flex items-center gap-3"><div class="brand-mark">A</div><div><div class="text-xl font-bold tracking-wide">AquaPiol</div><div class="text-xs text-cyan-200">Accounting Management</div></div></div>
+  </div>
+  <div class="px-5 pt-6 pb-2 text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Workspace</div>
+  <nav class="flex-1 space-y-1 px-3">
+    <a class="side-link {{#if (eq page 'dashboard')}}active{{/if}}" href="/dashboard"><span>▦</span> Dashboard</a>
+    <a class="side-link {{#if (eq page 'accounts')}}active{{/if}}" href="/accounts"><span>▤</span> Chart of Accounts</a>
+    <a class="side-link {{#if (eq page 'transactions')}}active{{/if}}" href="/transactions"><span>⇄</span> Transactions</a>
+    <a class="side-link {{#if (eq page 'invoices')}}active{{/if}}" href="/invoices"><span>▧</span> Invoices</a>
+    <a class="side-link {{#if (eq page 'customers')}}active{{/if}}" href="/customers"><span>♙</span> Customers</a>
+    <a class="side-link {{#if (eq page 'suppliers')}}active{{/if}}" href="/suppliers"><span>♧</span> Suppliers</a>
+    <a class="side-link {{#if (eq page 'reports')}}active{{/if}}" href="/reports"><span>▥</span> Financial Reports</a>
+    {{#if (eq currentUser.role 'admin')}}
+    <div class="px-3 pt-6 pb-2 text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Administration</div>
+    <a class="side-link {{#if (eq page 'users')}}active{{/if}}" href="/users"><span>♙</span> User Management</a>
+    {{/if}}
+  </nav>
+  <div class="border-t border-white/10 p-4">
+    <div class="mb-3 flex items-center gap-3 px-2"><div class="avatar">AP</div><div class="min-w-0"><div class="truncate text-sm font-semibold">{{currentUser.name}}</div><div class="text-xs capitalize text-cyan-200">{{currentUser.role}}</div></div></div>
+    <form action="/logout" method="POST"><button class="side-link w-full text-left" type="submit"><span>↪</span> Sign out</button></form>
+  </div>
+</aside>
